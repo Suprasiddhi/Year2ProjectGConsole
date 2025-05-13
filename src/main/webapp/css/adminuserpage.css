@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Button Classes */
+.apply-filters-btn,
+.reset-filters-btn,
+.add-customer-btn,
+.save-customer-btn,
+.update-customer-btn,
+.edit-customer-btn {
+    background-color: #81c784;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.apply-filters-btn:hover,
+.reset-filters-btn:hover,
+.add-customer-btn:hover,
+.save-customer-btn:hover,
+.update-customer-btn:hover,
+.edit-customer-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Table Section */
+.table-section {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.table-section h2 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+td {
+    color: #4b5563;
+}
+
+/* Action buttons in table */
+table button.edit-customer-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-form h2 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4b5563;
+}
+
+.modal-form input,
+.modal-form select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #e5e7eb;
+    font-size: 1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-customer-btn,
+.update-customer-btn {
+    background-color: #388e3c;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-customer-btn:hover,
+.update-customer-btn:hover {
+    background-color: #81c784;
+}
+
+.cancel-btn {
+    background-color: #e5e7eb;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #d1d5db;
+}
+
+/* Search Bar */
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.search-bar input::placeholder {
+    color: #aaa;
+}
+
+.search-bar input:focus {
+    border-color: #388e3c;
+}
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    align-items: flex-end;
+}
+
+.filter-section label {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.filter-section input,
+.filter-section select {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 130px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filter-section input::placeholder {
+    color: #aaa;
+}
+
+.filter-section input:focus,
+.filter-section select:focus {
+    border-color: #388e3c;
+}
+
+/* Apply Filters and Reset Buttons */
+.apply-filters-btn,
+.reset-filters-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #81c784;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.apply-filters-btn:hover {
+    background-color: #388e3c;
+}
+
+.reset-filters-btn:hover {
+    background-color: red;
+}
+
+/* Delete Button */
+.delete-customer-btn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    margin-left: 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.delete-customer-btn:hover {
+    background-color: #dc2626;
+}
