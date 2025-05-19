@@ -17,6 +17,7 @@
                 <a href="device">Devices</a>
                 <a href="cart">Cart</a>
                 <a href="support">Support</a>
+                <a href="aboutus">About Us</a>
             </nav>
 <% if (session.getAttribute("loggedIn") != null && (boolean) session.getAttribute("loggedIn")) { %>
         

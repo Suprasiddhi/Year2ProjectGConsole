@@ -36,6 +36,8 @@ public class AuthenticationFilter implements Filter {
 	private static final String ADDCUSTOMER ="/addcustomer";
 	private static final String EDITCUSTOMER="/editcustomer";
 	private static final String DELETECUSTOMER="/deletecustomer";
+	private static final String ADDORDER ="/addorder";
+	private static final String ABOUTUS = "/aboutus";
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -70,8 +72,8 @@ public class AuthenticationFilter implements Filter {
                     || uri.endsWith(CART) || uri.endsWith(DEVICE) || uri.endsWith(EDITPROFILE) || uri.endsWith(LOGOUT)
                     || uri.endsWith(ADMINPRODUCT) || uri.endsWith(ADDPRODUCT) || uri.endsWith(DELETEPRODUCT)
                     || uri.endsWith(EDITPRODUCT) || uri.endsWith(ADDCUSTOMER) || uri.endsWith(EDITCUSTOMER)
-                    || uri.endsWith(DELETECUSTOMER)
-            ) {
+                    || uri.endsWith(DELETECUSTOMER) || uri.endsWith(ADDORDER) || uri.endsWith(ABOUTUS) )
+             {
                 chain.doFilter(request, response);
             } else {
                 res.sendRedirect(req.getContextPath() + DASHBOARD);
@@ -82,6 +84,7 @@ public class AuthenticationFilter implements Filter {
             } else if (
                     uri.endsWith(HOME) || uri.endsWith(LOGEDINHOME) || uri.endsWith(ROOT) || uri.endsWith(CART)
                     || uri.endsWith(DEVICE) || uri.endsWith(SUPPORT) || uri.endsWith(EDITPROFILE) || uri.endsWith(LOGOUT)
+                    || uri.endsWith(ABOUTUS) 
             ) {
                 chain.doFilter(request, response);
             } else if (uri.endsWith(DASHBOARD)){

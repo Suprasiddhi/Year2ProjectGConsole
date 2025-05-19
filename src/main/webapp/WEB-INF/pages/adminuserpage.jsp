@@ -66,7 +66,7 @@
         <section class="table-section">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <h2>Customer List</h2>
-                <button id="addCustomerBtn" class="add-customer-btn">Add Customer</button>
+ 
             </div>
             <table>
                 <thead>
@@ -92,7 +92,7 @@
                             <td>${customer.customer_dob}</td>
                             <td>${customer.customer_address}</td>
                             <td>
-                                <button class="edit-customer-btn">Edit</button>
+                                
                                 <form action="${pageContext.request.contextPath}/deletecustomer" method="POST" style="display:inline;">
                                     <input type="hidden" name="customerUsername" value="${customer.customer_username}">
                                     <button type="submit" class="delete-customer-btn" onclick="return confirm('Are you sure you want to delete ${customer.customer_name}?')">Delete</button>
@@ -105,69 +105,7 @@
         </section>
     </main>
 
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-form">
-            <h2>Add New Customer</h2>
-            <form id="add-customer-form" action="${pageContext.request.contextPath}/addcustomer" enctype="multipart/form-data" method="POST">
-                <label for="customerUsername">Username</label>
-                <input type="text" id="customerUsername" name="customerUsername" required>
-                <label for="customerName">Name</label>
-                <input type="text" id="customerName" name="customerName" required>
-                <label for="customerEmail">Email</label>
-                <input type="email" id="customerEmail" name="customerEmail" required>
-                <label for="customerPhonenumber">Phone Number</label>
-                <input type="text" id="customerPhonenumber" name="customerPhonenumber" required>
-                <label for="customerGender">Gender</label>
-                <select id="customerGender" name="customerGender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-                <label for="customerDob">Date of Birth</label>
-                <input type="date" id="customerDob" name="customerDob" required>
-                <label for="customerAddress">Address</label>
-                <input type="text" id="customerAddress" name="customerAddress">
-                <label for="customerImage">Image</label>
-                <input type="file" id="customerImage" name="customerImage" accept="image/*">
-                <div class="modal-buttons">
-                    <button type="submit" class="save-customer-btn">Save</button>
-                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
-    <div id="edit-modal-overlay" class="modal-overlay">
-        <div class="modal-form">
-            <h2>Edit Customer</h2>
-            <form id="edit-customer-form" action="${pageContext.request.contextPath}/editcustomer" method="POST">
-                <input type="hidden" id="editCustomerHiddenUsername" name="editCustomerHiddenUsername">
-                <label for="editCustomerUsername">Username</label>
-                <input type="text" id="editCustomerUsername" name="editCustomerUsername" required>
-                <label for="editCustomerName">Name</label>
-                <input type="text" id="editCustomerName" name="editCustomerName" required>
-                <label for="editCustomerEmail">Email</label>
-                <input type="email" id="editCustomerEmail" name="editCustomerEmail" required>
-                <label for="editCustomerPhonenumber">Phone Number</label>
-                <input type="text" id="editCustomerPhonenumber" name="editCustomerPhonenumber" required>
-                <label for="editCustomerGender">Gender</label>
-                <select id="editCustomerGender" name="editCustomerGender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-                <label for="editCustomerDob">Date of Birth</label>
-                <input type="date" id="editCustomerDob" name="editCustomerDob" required>
-                <label for="editCustomerAddress">Address</label>
-                <input type="text" id="editCustomerAddress" name="editCustomerAddress">
-                <div class="modal-buttons">
-                    <button type="submit" class="update-customer-btn">Update</button>
-                    <button type="button" class="cancel-btn" onclick="closeEditModal()">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 <script>
 function searchByName() {

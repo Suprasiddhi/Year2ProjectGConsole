@@ -193,39 +193,3 @@ body {
 .cart-btn:hover {
     background: #388e3c;
 }
-
-.footer {
-    background: #1b5e20;
-    color: #e8f5e9;
-    padding: 2rem 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-}
-
-.footer-section h3 {
-    color: #a5d6a7;
-}
-
-.footer-section a {
-    display: block;
-    color: #c8e6c9;
-    text-decoration: none;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.map-container {
-    margin: 2rem 0 0;
-    border-top: 1px solid #388e3c;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
-    background: #040705;
-}

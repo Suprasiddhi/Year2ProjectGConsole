@@ -14,9 +14,8 @@
         <a href="admindashboard">Dashboard</a>
         <a href="addcustomer">Users</a>
         <a href="addproduct">Products</a>
-        <a href="#">Sales</a>
-        <a href="#">Reports</a>
-        <a href="#">Settings</a>
+        <a href="addorder">Order</a>
+
       </nav>
     </aside>
 </body>
